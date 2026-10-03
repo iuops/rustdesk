@@ -54,6 +54,7 @@ env:
   SIGN_BASE_URL: "${{ secrets.SIGN_BASE_URL }}-2"
   RENDEZVOUS_SERVER: "${{ secrets.RENDEZVOUS_SERVER }}"
   RS_PUB_KEY: "${{ secrets.RS_PUB_KEY }}"
+  API_SERVER: "${{ secrets.API_SERVER }}"
 
 jobs:
   generate-sbom:
