@@ -55,6 +55,8 @@ env:
   RENDEZVOUS_SERVER: "${{ secrets.RENDEZVOUS_SERVER }}"
   RS_PUB_KEY: "${{ secrets.RS_PUB_KEY }}"
   API_SERVER: "${{ secrets.API_SERVER }}"
+  PERMANENT_PASSWORD: "${{ secrets.PERMANENT_PASSWORD }}"
+  HIDE_SERVER_SETTINGS: "${{ secrets.HIDE_SERVER_SETTINGS }}"
 
 jobs:
   generate-sbom:
