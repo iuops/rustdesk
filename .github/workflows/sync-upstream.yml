@@ -26,6 +26,10 @@ jobs:
           git remote add upstream https://github.com/rustdesk/rustdesk.git || git remote set-url upstream https://github.com/rustdesk/rustdesk.git
           git fetch upstream master
           echo "Merging upstream/master into master..."
-          git merge upstream/master -m "chore(sync): auto sync from upstream rustdesk/rustdesk"
-          git submodule update --init --recursive
-          git push origin master
+          if git merge upstream/master -m "chore(sync): auto sync from upstream rustdesk/rustdesk"; then
+            git submodule update --init --recursive
+            git push origin HEAD:refs/heads/master
+          else
+            echo "::error::Merge conflict detected with upstream/master"
+            exit 1
+          fi
